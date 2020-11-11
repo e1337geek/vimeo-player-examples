@@ -2,9 +2,9 @@ var total_time_watched = 0;
 var before_seconds = 0;
 
 $( document ).ready(function() {
-		
+
 	var iframe_embed = document.querySelector('#iframe_embed');
-    var iframe_embed_player = new Vimeo.Player(iframe_embed);
+	var iframe_embed_player = new Vimeo.Player(iframe_embed);
 	
 	var div_with_html_player = new Vimeo.Player('div_with_html');
 	
@@ -15,25 +15,25 @@ $( document ).ready(function() {
 	
 	iframe_embed_player.on('play', function(e) {
 		before_seconds = e.seconds;
-    });
+	});
 	div_with_html_player.on('play', function(e) {
 		before_seconds = e.seconds;
-    });
+	});
 	div_with_js_player.on('play', function(e) {
 		before_seconds = e.seconds;
-    });
+	});
 
 	iframe_embed_player.on('timeupdate', function(e) {
 		add_to_total(e);
-    });
-	
+	});
+
 	div_with_html_player.on('timeupdate', function(e) {
 		add_to_total(e);
-    });
-	
+	});
+
 	div_with_js_player.on('timeupdate', function(e) {
 		add_to_total(e);
-    });
+	});
 
 });
 
